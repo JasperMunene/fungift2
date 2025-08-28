@@ -1,0 +1,551 @@
+/* Playful Children's Color Scheme */
+:root {
+  --green: #96CEB4;              /* Mint green (playful) */
+  --black: #2C3E50;              /* Softer dark blue-gray */
+  --secondary: #7B68EE;          /* Medium slate blue (playful) */
+  --secondary2: #9370DB;         /* Medium purple (playful) */
+  --white: #ffffff;
+  --surface: #FFF9E6;            /* Cream background (playful) */
+  --red: #FF6B6B;                /* Coral red (playful) */
+  --purple: #DDA0DD;             /* Light purple (playful) */
+  --success: #32CD32;            /* Bright lime green (playful) */
+  --yellow: #FFE066;             /* Sunshine yellow (playful) */
+  --pink: #FF69B4;               /* Bubblegum pink (playful) */
+  --line: #E6F3FF;               /* Very light blue (playful) */
+  --outline: rgba(75, 0, 130, 0.2);  /* Purple outline (playful) */
+  --surface1: rgba(255, 224, 102, 0.2);  /* Sunshine transparent overlay (playful) */
+  --surface2: rgba(255, 233, 167, 0.3);  /* Warm transparent overlay (playful) */
+  
+  /* Additional children's colors */
+  --bubble-pink: #FF6B9D;
+  --ocean-blue: #4ECDC4;
+  --sunshine-yellow: #FFD93D;
+  --mint-fresh: #2ECC71;
+  --sunset-orange: #FF8C42;
+  --sky-blue: #87CEEB;
+  --peach: #FFAB91;
+}
+
+
+/* Reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Import playful Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Comic+Neue:wght@300;400;700&display=swap');
+
+html,
+body {
+  font-family: 'Fredoka', 'Comic Neue', cursive, sans-serif;
+  font-size: 16px;
+  line-height: 26px;
+  color: var(--black);
+  font-weight: 400;
+  overflow-x: hidden;
+  user-select: none;
+  scroll-behavior: smooth;
+  background: linear-gradient(135deg, var(--surface) 0%, #FFF 100%);
+}
+
+div,
+span,
+p {
+  font-size: 16px;
+  line-height: 26px;
+}
+
+select {
+  appearance: none;
+  outline: none;
+}
+
+.select-block {
+  position: relative;
+
+  >.arrow-down {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 16px;
+  }
+}
+
+input,
+textarea {
+  outline: none;
+  border: 1px solid transparent;
+  transition: border-color ease 0.3s;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--black);
+}
+
+input[type="file"] {
+  outline: none;
+  border: none !important;
+
+  &::-webkit-file-upload-button {
+    display: none;
+  }
+}
+
+/* Main class used in Anvogue */
+.container {
+  max-width: 1322px !important;
+  width: 100%;
+  padding-right: 16px;
+  padding-left: 16px;
+  margin: 0 auto;
+}
+
+/* Consistent spacing utilities */
+.section-padding {
+  padding: 80px 0;
+}
+
+@media (max-width: 1023.99px) {
+  .section-padding {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .section-padding {
+    padding: 40px 0;
+  }
+}
+
+/* Playful button hover effects */
+.btn-hover-effect {
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  
+  &:hover {
+    transform: translateY(-4px) rotate(2deg);
+    box-shadow: 0 8px 20px rgba(255, 107, 157, 0.3);
+    animation: wiggle 0.5s ease-in-out;
+  }
+}
+
+/* Playful card styling */
+.card-hover {
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  border-radius: 20px;
+  
+  &:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(78, 205, 196, 0.2);
+    animation: float 2s ease-in-out infinite;
+  }
+}
+
+.bg-red {
+  background-color: var(--red);
+}
+
+.bg-yellow {
+  background-color: var(--yellow);
+}
+
+.bg-purple {
+  background-color: var(--purple);
+}
+
+.bg-blue {
+  background-color: #4856DA;
+}
+
+.bg-silver {
+  background-color: #a1a2af;
+}
+
+.bg-linear {
+  background: linear-gradient(238deg, #FAF8F1 0%, #F6F3EF 99.66%);
+}
+
+.box-shadow-xs {
+  box-shadow: 0px 2px 2px 0px #1C24331A;
+}
+
+.box-shadow-sm {
+  box-shadow: 0px 10px 25px 0px rgba(43, 52, 74, 0.12);
+}
+
+.text-sub-display {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+.text-display {
+  font-family: 'Fredoka', cursive;
+  font-size: 80px;
+  font-weight: 600;
+  line-height: 88px;
+  text-transform: capitalize;
+  background: linear-gradient(135deg, var(--bubble-pink), var(--ocean-blue), var(--sunshine-yellow));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: rainbow-text 3s ease-in-out infinite;
+}
+
+.heading1 {
+  font-family: 'Fredoka', cursive;
+  font-size: 56px;
+  line-height: 68px;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: var(--black);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.heading2 {
+  font-family: 'Fredoka', cursive;
+  font-size: 44px;
+  line-height: 50px;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: var(--secondary);
+}
+
+.heading3 {
+  font-family: 'Fredoka', cursive;
+  font-size: 36px;
+  line-height: 40px;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: var(--black);
+}
+
+.heading4 {
+  font-size: 30px;
+  line-height: 42px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.heading5 {
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.heading6 {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.text-title {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.body1 {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+}
+
+.text-button {
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.text-button-uppercase {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.caption1 {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+}
+
+.caption2 {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+}
+
+.button-main {
+  font-family: 'Fredoka', cursive;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: var(--white);
+  background: linear-gradient(135deg, var(--bubble-pink) 0%, var(--pink) 100%);
+  padding: 18px 36px;
+  border-radius: 25px;
+  display: inline-block;
+  cursor: pointer;
+  transition: all ease 0.4s;
+  border: 3px solid transparent;
+  box-shadow: 0 4px 15px rgba(255, 107, 157, 0.3);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.6s;
+  }
+
+  &:hover {
+    background: linear-gradient(135deg, var(--sunshine-yellow) 0%, var(--yellow) 100%);
+    color: var(--black);
+    border-color: var(--sunshine-yellow);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(255, 215, 61, 0.4);
+    animation: bounce 0.6s ease;
+
+    &::before {
+      left: 100%;
+    }
+
+    svg {
+      path {
+        fill: var(--black);
+      }
+    }
+  }
+
+  &.bg-white {
+    background-color: var(--white);
+    color: var(--black);
+    border-color: var(--black);
+
+    &:hover {
+      background-color: var(--black);
+      color: var(--white);
+      border-color: var(--black);
+    }
+  }
+
+  &.button-secondary {
+    background-color: transparent;
+    color: var(--black);
+    border-color: var(--black);
+
+    &:hover {
+      background-color: var(--black);
+      color: var(--white);
+    }
+  }
+}
+
+@media (max-width: 1023.99px) {
+  .text-sub-display {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 1.1px;
+  }
+
+  .text-display {
+    font-size: 42px;
+    line-height: 50px;
+  }
+
+  .heading1 {
+    font-size: 36px;
+    line-height: 48px;
+  }
+
+  .heading2 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .heading3 {
+    font-size: 30px;
+    line-height: 38px;
+  }
+
+  .heading4 {
+    font-size: 26px;
+    line-height: 32px;
+  }
+
+  .heading5 {
+    font-size: 22px;
+    line-height: 28px;
+  }
+
+  .heading6 {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .button-main {
+    padding: 12px 24px;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 767.98px) {
+
+  html,
+  body,
+  div,
+  span,
+  p {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  .text-sub-display {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 1.1px;
+  }
+
+  .text-display {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  .heading1 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .heading2 {
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  .heading3 {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .heading4 {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .heading5 {
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  .heading6 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .text-title {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .body1 {
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  .text-button {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  .text-button-uppercase {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .caption1 {
+    font-size: 13px;
+    line-height: 20px;
+  }
+
+  .button-main {
+    font-size: 12px;
+    line-height: 16px;
+    padding: 10px 16px;
+    border-radius: 20px;
+  }
+}
+
+/* Playful Animations for Children's Theme */
+@keyframes bounce {
+  0%, 20%, 60%, 100% {
+    transform: translateY(-3px) scale(1.05);
+  }
+  40% {
+    transform: translateY(-8px) scale(1.08);
+  }
+  80% {
+    transform: translateY(-1px) scale(1.03);
+  }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(2deg); }
+  75% { transform: rotate(-2deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(-8px) scale(1.02); }
+  50% { transform: translateY(-12px) scale(1.03); }
+}
+
+@keyframes rainbow-text {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 5px rgba(255, 107, 157, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(255, 107, 157, 0.6), 0 0 30px rgba(78, 205, 196, 0.4); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-2px); }
+  20%, 40%, 60%, 80% { transform: translateX(2px); }
+}
+
+/* Playful utility classes */
+.playful-shadow {
+  box-shadow: 0 8px 25px rgba(255, 107, 157, 0.2), 0 4px 10px rgba(78, 205, 196, 0.1);
+}
+
+.rainbow-border {
+  border: 3px solid;
+  border-image: linear-gradient(45deg, var(--bubble-pink), var(--ocean-blue), var(--sunshine-yellow), var(--mint-fresh)) 1;
+  border-radius: 15px;
+}
+
+.fun-hover {
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  
+  &:hover {
+    transform: scale(1.05) rotate(1deg);
+    animation: pulse-glow 1s ease-in-out;
+  }
+}

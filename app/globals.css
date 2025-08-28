@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 33, 37, 41;
+  --background-start-rgb: 255, 248, 231;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 48 100% 96%; /* Warm cream background */
+    --foreground: 210 6% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 210 6% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 6% 12%;
+    --primary: 340 100% 70%; /* Bubble pink */
+    --primary-foreground: 0 0% 98%;
+    --secondary: 174 60% 60%; /* Ocean blue */
+    --secondary-foreground: 0 0% 98%;
+    --muted: 48 100% 96%;
+    --muted-foreground: 210 4% 63%;
+    --accent: 48 100% 62%; /* Sunshine yellow */
+    --accent-foreground: 210 6% 12%;
+    --destructive: 4 90% 58%; /* Candy red */
+    --destructive-foreground: 0 0% 98%;
+    --border: 210 16% 93%;
+    --input: 210 16% 93%;
+    --ring: 340 100% 70%;
+    --chart-1: 340 100% 70%; /* Bubble pink */
+    --chart-2: 174 60% 60%; /* Ocean blue */
+    --chart-3: 48 100% 62%; /* Sunshine yellow */
+    --chart-4: 142 71% 45%; /* Mint green */
+    --chart-5: 22 100% 62%; /* Sunset orange */
+    --radius: 1rem; /* Slightly more rounded for playful feel */
+  }
+  .dark {
+    --background: 240 10% 8%; /* Dark but slightly warmer */
+    --foreground: 0 0% 98%;
+    --card: 240 10% 10%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 10%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 340 85% 65%; /* Slightly muted bubble pink for dark mode */
+    --primary-foreground: 0 0% 98%;
+    --secondary: 174 50% 55%; /* Slightly muted ocean blue */
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 10% 15%;
+    --muted-foreground: 210 4% 65%;
+    --accent: 48 90% 58%; /* Slightly muted sunshine yellow */
+    --accent-foreground: 240 10% 8%;
+    --destructive: 4 85% 55%; /* Slightly muted candy red */
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 10% 20%;
+    --input: 240 10% 20%;
+    --ring: 340 85% 65%;
+    --chart-1: 340 85% 65%; /* Bubble pink */
+    --chart-2: 174 50% 55%; /* Ocean blue */
+    --chart-3: 48 90% 58%; /* Sunshine yellow */
+    --chart-4: 142 65% 50%; /* Mint green */
+    --chart-5: 22 90% 58%; /* Sunset orange */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
