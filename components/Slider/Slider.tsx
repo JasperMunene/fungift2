@@ -9,7 +9,7 @@ const Slider = () => {
         <>
             <div className="slider-block style-one bg-gradient-to-br from-surface via-white to-surface xl:py-[100px] px-4 md:py-20 py-14 w-full playful-shadow">
                 <div className="slider-main h-full w-full flex items-center justify-center gap-10 animate-pulse">
-                    <div className="sub-img w-[440px] max-md:w-1/2 rounded-b-full overflow-hidden max-md:hidden fun-hover rainbow-border">
+                    <div className="sub-img w-[440px] max-md:w-1/2 rounded-b-full overflow-hidden max-md:hidden transform hover:scale-105 transition-transform duration-300 ease-out rainbow-border">
                         <Image
                             src={'/images/gifting-2.jpg'}
                             width={2000}
@@ -27,12 +27,12 @@ const Slider = () => {
                             Gifts Made Easy
                         </div>
                         <div className="text-center mt-6">
-                            <Link href='/shop/gifts' className="button-main md:mt-8 mt-3 fun-hover transform hover:scale-110 hover:rotate-2">
+                            <Link href='/shop/gifts' className="button-main md:mt-8 mt-3 transform hover:scale-110 hover:rotate-2 transition-all duration-300 ease-out">
                                 Shop Gifts
                             </Link>
                         </div>
                     </div>
-                    <div className="sub-img w-[440px] max-md:w-1/2 rounded-t-full overflow-hidden fun-hover rainbow-border">
+                    <div className="sub-img w-[440px] max-md:w-1/2 rounded-t-full overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-out rainbow-border">
                         <Image
                             src={'/images/gifting-1.jpg'}
                             width={2000}
