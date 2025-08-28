@@ -7,23 +7,26 @@ import { LazyWhyChooseUs, LazyFooter } from '@/components/ui/lazy-components';
 import React from "react";
 
 export default function Home() {
-  return (
-      <>
-        <TopNavOne props="style-one bg-black" slogan='New customers save 10% with the code GET10' />
+    return (
+        <>
+            <TopNavOne
+                props="style-one bg-primary"
+                slogan='New customers save 10% with the code GET10'
+            />
 
-      <div id="header" className="relative w-full">
-          <MenuOne props="bg-transparent" />
-        {/*<BannerTop props="bg-black py-3" textColor='text-white' bgLine='bg-white' />*/}
-        <Slider />
-      </div>
-        <Benefit props="md:py-20 py-10" />
-        <AsyncSections 
-          bestSellersProps={{ collectionHandle: "best-sellers", limit: 8 }}
-          giftCardsProps={{ collectionHandle: 'gift-cards', limit: 8 }}
-        />
-        {/*<Features />*/}
-          <LazyWhyChooseUs />
-          <LazyFooter />
-      </>
-  );
+            <div id="header" className="relative w-full">
+                <MenuOne props="bg-transparent" />
+                <Slider />
+            </div>
+
+            <Benefit props="md:py-20 py-10" />
+            <AsyncSections
+                bestSellersProps={{ collectionHandle: "best-sellers", limit: 8 }}
+                giftCardsProps={{ collectionHandle: 'gift-cards', limit: 8 }}
+            />
+
+            <LazyWhyChooseUs />
+            <LazyFooter />
+        </>
+    );
 }
