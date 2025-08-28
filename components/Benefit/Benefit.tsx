@@ -12,7 +12,7 @@ const Benefit: React.FC<Props> = ({ props }) => {
                 <div className={`benefit-block ${props}`}>
                     <div className="heading text-center max-w-2xl mx-auto">
                         <h2 className="heading3 text-3xl md:text-4xl font-bold text-gray-800 mb-4">What Makes Us Special</h2>
-                        <p className="text-lg text-gray-600">We're committed to making gift-giving a delightful experience for kids and parents alike</p>
+                        <p className="text-lg text-gray-600">We&apos;re committed to making gift-giving a delightful experience for kids and parents alike</p>
                     </div>
 
                     <div className="list-benefit grid items-start lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-8 md:mt-16 mt-10">
